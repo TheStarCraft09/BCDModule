@@ -12,26 +12,38 @@ public class bcd_module {
             String selector_input = scanner.nextLine();
 
             if (selector_input.equalsIgnoreCase("h")) {     //Converts Hex to decimal
-                System.out.print("Enter a hexadecimal number: ");
-                String hexInput = scanner.nextLine();
-                if (!hexInput.matches("[0-9a-fA-F]+")) {
+                while (true) {
+                    System.out.print("Enter a hexadecimal number or quit to menu(q): ");
+                    String hexInput = scanner.nextLine();
+                    if (hexInput.equalsIgnoreCase("q")) {
+                        break;
+                    }
+                    if (!hexInput.matches("[0-9a-fA-F]+")) {
                     System.out.println("Invalid hexadecimal input. Use digits 0-9 and letters A-F.");
                     continue;
                 }
                 bcd_module converter = new bcd_module();
                 int decimal = converter.convertHex(hexInput);
                 System.out.println("Decimal: " + decimal);
+                }
+
             }
             else if (selector_input.equalsIgnoreCase("b")) {        //Converts Binary to decimal
-                System.out.print("Enter a binary number: ");
-                String binInput = scanner.nextLine();
-                if (!binInput.matches("[01]+")) {
-                    System.out.println("Invalid binary input. Use only 0 and 1.");
-                    continue;
-                }
-                bcd_module converter = new bcd_module();
-                int decimal = converter.convert(Integer.parseInt(binInput));
-                System.out.println("Decimal: " + decimal);
+               while(true) {
+                    System.out.print("Enter a binary number or quit to menu(q): ");
+                    String binInput = scanner.nextLine();
+                    if (binInput.equalsIgnoreCase("q")) {
+                        break;
+                    }
+                    if (!binInput.matches("[01]+")) {
+                        System.out.println("Invalid binary input. Use only 0 and 1.");
+                        continue;
+                    }
+                   bcd_module converter = new bcd_module();
+                   int decimal = converter.convert(Integer.parseInt(binInput));
+                   System.out.println("Decimal: " + decimal);
+               }
+
             }
             else if (selector_input.equalsIgnoreCase("q")) {        //Quits the program
                 System.out.println("Exiting.");
