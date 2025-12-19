@@ -21,7 +21,7 @@ public class bcd_module {
             int decimal = converter.convert(Integer.parseInt(input));
             System.out.println("Decimal: " + decimal);
         }
-        scanner.close();  // ✅ Nach der while-Schleife!
+        scanner.close();  
     }
 
     private int convert(int binary) {  // int statt void!
@@ -34,6 +34,6 @@ public class bcd_module {
             binary /= 10;
             place_value++;
         }
-        return decimal;  // ✅ Gibt die Zahl zurück!
+        return decimal;  
     }
 }
