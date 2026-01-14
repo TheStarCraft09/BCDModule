@@ -8,6 +8,7 @@ public class bcd_module {
             System.out.println("What do you want to do? ");
             System.out.println("Convert Hexadecimal (press h)");
             System.out.println("Convert Binary (press b)");
+            System.out.println("Encode Text with Caesar-encoding (Press c)");
             System.out.println("Quit (press q)");
             String selector_input = scanner.nextLine();
 
@@ -44,6 +45,15 @@ public class bcd_module {
                    System.out.println("Decimal: " + decimal);
                }
 
+            }
+            else if (selector_input.equalsIgnoreCase(("c"))){
+                System.out.println("Enter the Key:");
+                String key = scanner.nextLine();
+                System.out.println("You selected the letter" + key + "as your key. Continue (Y/N)?");
+                String Temp = scanner.nextLine();
+                if(Temp == "Y"){
+
+                }
             }
             else if (selector_input.equalsIgnoreCase("q")) {        //Quits the program
                 System.out.println("Exiting.");
@@ -98,4 +108,12 @@ public class bcd_module {
         }
         return decimal;
     }
+}
+
+private String Encode(){
+    System.out.println("Enter the String to encode")
+
+}
+
+void main() {
 }
