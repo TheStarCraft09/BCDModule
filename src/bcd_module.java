@@ -1,8 +1,17 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public static class bcd_module {
+    private static ArrayList<Character> Alphabet = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    static {
+        String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (int i = 0; i < alpha.length(); i++){
+            Alphabet.add(alpha.charAt(i));
+        }
+    }
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("What do you want to do? ");
@@ -47,7 +56,13 @@ public static class bcd_module {
 
             }
             else if (selector_input.equalsIgnoreCase(("c"))){
+                while(true){
+                    System.out.println("Enter your key letter");
+                    String TempKey = scanner.nextLine();
+                    char Key = TempKey.charAt(0);
+                    bcd_module converter = new bcd_module();
 
+                }
             }
             else if (selector_input.equalsIgnoreCase("q")) {        //Quits the program
                 System.out.println("Exiting.");
@@ -61,7 +76,10 @@ public static class bcd_module {
         scanner.close();
 
     }
+    private static char moveLetterByKey(char key){
 
+
+    }
     private int convert(int binary) {       //Basic binary to decimal conversion
         int decimal = 0;
         int place_value = 0;
@@ -105,14 +123,7 @@ public static class bcd_module {
         }
         return decimal;
     }
-    private String MoveAlphabetToKey(){
-        String Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your Key letter:");
-        String Key = scanner.nextLine();
-        System.out.println("Your key is" + Key + ". Continue(Y/n)?");
 
-    }
 }
 
 void main() {
