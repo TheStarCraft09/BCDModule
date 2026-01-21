@@ -77,8 +77,9 @@ public static class bcd_module {
 
     }
     private static char moveLetterByKey(char key){
+        char finalLetter = r;
 
-
+        return finalLetter;
     }
     private int convert(int binary) {       //Basic binary to decimal conversion
         int decimal = 0;
