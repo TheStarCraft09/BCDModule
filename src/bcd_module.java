@@ -5,9 +5,10 @@ public static class bcd_module {
     private static ArrayList<Character> Alphabet = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
     static {
-        String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ,.-!?ß()/&%$\"";
         for (int i = 0; i < alpha.length(); i++){
             Alphabet.add(alpha.charAt(i));
+            Alphabet.add((char)32);
         }
     }
 
@@ -79,13 +80,17 @@ public static class bcd_module {
     private static char moveLetterByKey(char key, char letter){
         int keyIDX = Alphabet.indexOf(key); //Sets the amount of letters the message gets shifted by
         int EncodedLetterIdx;
+        int letterIdx = getLetterIdx(letter);
         char finalLetter = ' ';
-
-
-
-
-
+        finalLetter = Alphabet.get(EncodedLetterIdx = (letterIdx + keyIDX) % Alphabet.size());
         return finalLetter;
+    }
+    private static int getLetterIdx(char Letter){
+        int LetterIDX = Alphabet.indexOf(Letter);
+        if (LetterIDX<0){
+            return Letter;
+        }
+        return LetterIDX;
     }
     private int convert(int binary) {       //Basic binary to decimal conversion
         int decimal = 0;
