@@ -55,7 +55,7 @@ public static class bcd_module {
                }
 
             }
-            else if (selector_input.equalsIgnoreCase(("c"))){
+            else if (selector_input.equalsIgnoreCase(("c"))){         //Encodes a given Sentence using the Caesar Chiffre
                 while(true){
                     System.out.println("Enter your key letter");
                     String TempKey = scanner.nextLine();
@@ -76,8 +76,14 @@ public static class bcd_module {
         scanner.close();
 
     }
-    private static char moveLetterByKey(char key){
-        char finalLetter = r;
+    private static char moveLetterByKey(char key, char letter){
+        int keyIDX = Alphabet.indexOf(key); //Sets the amount of letters the message gets shifted by
+        int EncodedLetterIdx;
+        char finalLetter = ' ';
+
+
+
+
 
         return finalLetter;
     }
