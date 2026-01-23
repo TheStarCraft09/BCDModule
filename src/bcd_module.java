@@ -87,9 +87,6 @@ public static class bcd_module {
     }
     private static int getLetterIdx(char Letter){
         int LetterIDX = Alphabet.indexOf(Letter);
-        if (LetterIDX<0){
-            return Letter;
-        }
         return LetterIDX;
     }
     private int convert(int binary) {       //Basic binary to decimal conversion
